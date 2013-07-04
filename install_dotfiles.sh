@@ -1,11 +1,12 @@
 #!/bin/bash
 
-cd $HOME
+# NOTE: this script assumes the dotfiles dir is directory under home
 
-# Backup old dotfiles dir
-if [ -d ./dotfiles/ ]; then
-    mv dotfiles dotfiles.old
-fi
+# For those installing this onto their own machines, it will not copy
+# my .gitconfig file over as well. That one is only for me! ...unless
+# you really want it.
+
+cd $HOME
 
 if [ -d .emacs.d/ ]; then
     mv .emacs.d .emacs.d~
@@ -15,7 +16,7 @@ if [ -d .oh-my-zsh/ ]; then
     mv .oh-my-zsh .oh-my-zsh~
 fi
 
-if [ -d .vim/]; then
+if [ -d .vim/ ]; then
     mv .vim .vim~
 fi
 
@@ -34,5 +35,8 @@ ln -sf dotfiles/.oh-my-zsh .
 # Vim config files
 ln -sb dotfiles/.vimrc .
 ln -sf dotfiles/.vim .
+
+# conky
+ln -sb dotfiles/.conkyrc .
 
 ln -sf dotfiles/.emacs.d .

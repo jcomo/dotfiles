@@ -1,0 +1,34 @@
+background yes
+use_xft yes
+xftfont 123:size=8
+xftalpha 0.1
+update_interval 1
+total_run_times 0
+own_window yes
+own_window_type normal
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 500 250
+maximum_width 700
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color white
+default_shade_color red
+default_outline_color green
+alignment bottom_right
+gap_x 140
+gap_y 100
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+net_avg_samples 1
+override_utf8_locale no
+use_spacer none
+
+
+TEXT
+${voffset 10}${color EAEAEA}${font GE Inspira:pixelsize=150}${time %H:%M}${font}${voffset -112}${offset 10}${color 56B14B}${font GE Inspira:pixelsize=64}${time %d} ${voffset -19}${color EAEAEA}${font GE Inspira:pixelsize=34}${time  %B} ${time %Y}${font}${voffset 30}${font GE Inspira:pixelsize=64}${offset -220}${time %A}${font}
+${voffset 10}${offset 40}${font GE Inspira:pixelsize=14}${color 56B14B}HD ${offset 9}$color${fs_used /} / ${fs_size /}${offset 30}${color 56B14B}RAM ${offset 9}$color$mem / $memmax${offset 30}${color 56B14B}CPU ${offset 9}$color${cpu cpu0}%
