@@ -12,10 +12,6 @@ if [ -d .emacs.d/ ]; then
     mv .emacs.d .emacs.d~
 fi
 
-if [ -d .oh-my-zsh/ ]; then
-    mv .oh-my-zsh .oh-my-zsh~
-fi
-
 if [ -d .vim/ ]; then
     mv .vim .vim~
 fi
@@ -30,7 +26,6 @@ ln -sb dotfiles/.bashrc_custom .
 
 # zsh config files
 ln -sb dotfiles/.zshrc .
-ln -sf dotfiles/.oh-my-zsh .
 
 # Vim config files
 ln -sb dotfiles/.vimrc .
