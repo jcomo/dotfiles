@@ -7,5 +7,5 @@ ready to go
 ```sh
 cd $HOME
 git clone https://github.com/jcomo/dotfiles.git
-.dotfiles/install_dotfiles.sh
+./dotfiles/install_dotfiles.sh
 ```
