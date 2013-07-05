@@ -47,14 +47,19 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:$HOME/.rvm/bin
-
 # create a better status readout for less
 export LESS='-i-P%f (%i/%m) Line %lt/%L'
 
 # pretty colors
 export TERM=xterm-256color
-
 export JAVA_HOME=/usr
 export RUBYOPT=rubygems
+
+# For Amazon AWS services
+export EC2_HOME=/opt/ec2-api-tools-1.6.7.4
+
+# Customize to your needs...
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:$HOME/.rvm/bin:$EC2_HOME/bin
+
+# Source custom config files (private variables and all that good stuff)
+source ~/.zshrc_custom
