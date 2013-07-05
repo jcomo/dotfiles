@@ -63,3 +63,5 @@ export PATH=/usr/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/heroku/bin:$PATH # Heroku: https://toolbelt.heroku.com/standalone
+
+[[ -s /home/jonathan/.nvm/nvm.sh ]] && . /home/jonathan/.nvm/nvm.sh # This loads NVM
