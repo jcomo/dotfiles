@@ -1,5 +1,8 @@
 # fix TERM variable for screen so we have pretty colors
 export TERM=xterm-256color
 
+# add environment variable for java home
+export JAVA_HOME=/usr
+
 # alias for startup directory
 alias startup='cd ~/development/startup'

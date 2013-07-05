@@ -1,18 +1,11 @@
+# 1) Set oh-my-zsh options
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="geoffgarside"
 
-# 1) Set umask permissions
-if [ "`id -gn`" == "`id -un`" -a `id -u` -gt 99 ]; then
-	umask 002
-else
-	umask 022
-fi
 
 # 2) Set up aliases
 
@@ -63,4 +56,5 @@ export LESS='-i-P%f (%i/%m) Line %lt/%L'
 # pretty colors
 export TERM=xterm-256color
 
+export JAVA_HOME=/usr
 export RUBYOPT=rubygems
