@@ -2,10 +2,6 @@
 
 # NOTE: this script assumes the dotfiles dir is directory under home
 
-# For those installing this onto their own machines, it will not copy
-# my .gitconfig file over as well. That one is only for me! ...unless
-# you really want it.
-
 cd $HOME
 
 if [ -d .emacs.d/ ]; then
@@ -33,5 +29,9 @@ ln -sf dotfiles/.vim .
 
 # conky
 ln -sb dotfiles/.conkyrc .
+
+# global gitignore
+ln -sb dotfiles/.gitignore_global .
+git config --global core.excludesfile ~/.gitignore_global
 
 ln -sf dotfiles/.emacs.d .
