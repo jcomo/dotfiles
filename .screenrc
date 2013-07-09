@@ -16,6 +16,8 @@
 ## -----------------------------------------------------------------------------------------
 ## -- 1) Set variables and keybindings for emacs compatibility (remapping Ctrl-A to Ctrl-T)
 ## -----------------------------------------------------------------------------------------
+shell "/bin/zsh"
+
 markkeys "h=^B:l=^F:$=^E"             # emacs style keybindings during copy mode movement in screen
 autodetach             on             # default: on
 crlf                  off             # default: off
