@@ -41,7 +41,7 @@ git config --global core.excludesfile ~/.gitignore_global
 
 ln -sf dotfiles/.emacs.d .
 
-read "Clean up? This will remove all original files (y/n) " response
+read -p "Clean up? This will remove all original files (y/n) " response
 if [ "$response" == "y" ]; then
   rm -f .*~
 fi
