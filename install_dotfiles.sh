@@ -3,7 +3,7 @@
 cd $HOME
 
 # Check to make sure dotfiles is located at $HOME/dotfiles
-if [ -d dotfiles ]; then
+if [ ! -d dotfiles ]; then
   echo "Could not find dotfiles directory. Make sure you place it under $HOME"
   exit 1
 fi
