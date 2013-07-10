@@ -23,9 +23,19 @@ ln -sb dotfiles/.screenrc .
 # bash config files
 ln -sb dotfiles/.bash_profile .
 ln -sb dotfiles/.bashrc .
+if [ ! -f .bashrc_custom ]; then
+  touch dotfiles/.bashrc_custom
+  ln -s dotfiles/.bashrc_custom .
+fi
 
 # zsh config files
 ln -sb dotfiles/.zshrc .
+
+# check for custom zsh config
+if [ ! -f .zshrc_custom ]; then
+  touch dotfiles/.zshrc_custom
+  ln -s dotfiles/.zshrc_custom .
+fi
 
 # Vim config files
 ln -sb dotfiles/.vimrc .
