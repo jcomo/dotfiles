@@ -13,7 +13,7 @@ ZSH_THEME="geoffgarside"
 alias rm="rm -i"
 alias mv="mv -i"
 alias cp="cp -i"
-set -o noclobber
+# set -o noclobber
 
 # 2.2) Listing, directories, and motion
 alias ll="ls -l --color"
@@ -53,7 +53,7 @@ export LESS='-i-P%f (%i/%m) Line %lt/%L'
 # pretty colors
 export TERM=xterm-256color
 export JAVA_HOME=/usr
-export RUBYOPT=rubygems
+# export RUBYOPT=rubygems
 
 # For Amazon AWS services
 export EC2_HOME=/opt/ec2-api-tools-1.6.8.0
