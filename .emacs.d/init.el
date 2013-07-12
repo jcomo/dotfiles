@@ -77,6 +77,14 @@
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
 
 
+;; ---------------------------
+;; -- Zencoding plugin HTML --
+;; ---------------------------
+(add-to-list 'load-path "~/.emacs.d/zencoding")
+(require 'zencoding-mode)
+(add-hook 'sgml-mode-hook 'zencoding-mode) ;; Auto-start on markup modes
+
+
 ;; --------------------------
 ;; --   Themes, bitches    --
 ;; --------------------------
