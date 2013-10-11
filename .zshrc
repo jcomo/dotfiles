@@ -4,7 +4,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # Look in ~/.oh-my-zsh/themes/
-ZSH_THEME="geoffgarside"
+ZSH_THEME="robbyrussell"
 
 
 # 2) Set up aliases
@@ -22,6 +22,8 @@ alias l="ls -CF"
 alias m='less'
 alias ..='cd ..'
 alias ...='cd ..;cd ..'
+alias ....='cd ..;cd ..;cd ..'
+alias grep='grep -i'
 alias md='mkdir'
 alias cl='clear'
 alias du='du -ch --max-depth=1'
@@ -54,6 +56,9 @@ export LESS='-i-P%f (%i/%m) Line %lt/%L'
 export TERM=xterm-256color
 export JAVA_HOME=/usr
 # export RUBYOPT=rubygems
+
+# 256 colors
+source base16-tomorrow.dark.sh
 
 # For Amazon AWS services
 export EC2_HOME=/opt/ec2-api-tools-1.6.8.0
