@@ -1,70 +1,38 @@
-# 1) Set oh-my-zsh options
-
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
+# Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-ZSH_THEME="robbyrussell"
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="sorin"
 
-
-# 2) Set up aliases
-
-# 2.1) Safety
+# Example aliases
 alias rm="rm -i"
-alias mv="mv -i"
-alias cp="cp -i"
-# set -o noclobber
-
-# 2.2) Listing, directories, and motion
-alias ll="ls -l --color"
-alias la="ls -alrtF --color"
-alias l="ls -CF"
-alias m='less'
-alias ..='cd ..'
-alias ...='cd ..;cd ..'
-alias ....='cd ..;cd ..;cd ..'
-alias grep='grep -i'
-alias md='mkdir'
-alias cl='clear'
-alias du='du -ch --max-depth=1'
-alias treeacl='tree -A -C -L 2'
-
-# 2.3) Text and editor commands
-alias em='emacs -nw'     # No X11 windows
-alias eqq='emacs -nw -Q' # No config and no X11
-export EDITOR='vim'
-export VISUAL='emacs -nw' 
-
-# 2.4) grep options
-export GREP_OPTIONS='--color=auto'
-export GREP_COLOR='1;31' # green for matches
-
-# 2.5) Misc.
+alias git="hub"
+alias cwd='printf "%q\n" "$(pwd)" | pbcopy'
+alias csci="cd ~/Documents/Dropbox/College/CSCI\\ 315/jbc027"
+alias datamining="cd ~/Documents/Dropbox/College/CSCI\\ 379"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git vim)
 
 source $ZSH/oh-my-zsh.sh
 
+# Customize to your needs...
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:~/.mybin
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
 # create a better status readout for less
 export LESS='-i-P%f (%i/%m) Line %lt/%L'
-
-# pretty colors
 export TERM=xterm-256color
-export JAVA_HOME=/usr
-# export RUBYOPT=rubygems
 
-# 256 colors
-source base16-tomorrow.dark.sh
+# fix ANSI16
+base16-tomorrow.dark.sh
 
-# For Amazon AWS services
-export EC2_HOME=/opt/ec2-api-tools-1.6.8.0
-
-# Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:$HOME/.rvm/bin
-
-# Source custom config files (private variables and all that good stuff)
-source ~/.zshrc_custom
+export RUBYOPT=rubygems

@@ -1,3 +1,8 @@
+" More UI stuff
+let g:solarized_termcolors = 256
+let g:solzarized_termtrans = 0
+let base16colorspace=256    " Access colors present in 256 colorspace
+
 " Basics
 set nocp
 call pathogen#infect()
@@ -13,6 +18,8 @@ set backspace=indent,eol,start
 set nosol
 set mat=3
 set wildignore+=*.o,*.obj,.git,*.pyc
+
+set mouse=a
 
 " Key mappings
 nnoremap <c-j> <c-w>j
@@ -66,11 +73,7 @@ set wmnu
 set guioptions=egmt
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 set background=dark
-colorscheme Tomorrow-Night-Eighties
-
-" More UI stuff
-let g:solarized_termcolors = 256
-let g:solzarized_termtrans = 0
+colorscheme base16-tomorrow
 
 " ctrlp
 let g:ctrlp_working_path_mode = 0

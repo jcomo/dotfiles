@@ -1,8 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/jonathan/Documents/Dropbox/College/CSCI 311'
-let g:netrw_dirhist_2='/Users/jonathan/Documents/Dropbox/College/CSCI 311/WordGame'
-let g:netrw_dirhist_3='/Users/jonathan/Documents/Dropbox/College/CSCI 311/WordGame/src'
-let g:netrw_dirhist_4='/Users/jonathan/Documents/Dropbox/College/CSCI 315/jbc027/csci315/Lab9/src'
-let g:netrw_dirhist_5='/Users/jonathan/Developer/programming/ruby/ruby-scripting/affinity-trip'
-let g:netrw_dirhist_6='/home/jonathan/Developer/scripts'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/Users/jonathan/Developer/choco/_posts'
