@@ -9,6 +9,7 @@ ZSH_THEME="sorin"
 
 # Example aliases
 alias rm="rm -i"
+alias sr='screen -r'
 alias cwd='printf "%q\n" "$(pwd)" | pbcopy'
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
