@@ -32,7 +32,4 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export LESS='-i-P%f (%i/%m) Line %lt/%L'
 export TERM=xterm-256color
 
-# fix ANSI16
-base16-tomorrow.dark.sh
-
 export RUBYOPT=rubygems
