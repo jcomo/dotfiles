@@ -9,17 +9,14 @@ ZSH_THEME="sorin"
 
 # Example aliases
 alias rm="rm -i"
-alias git="hub"
 alias cwd='printf "%q\n" "$(pwd)" | pbcopy'
-alias csci="cd ~/Documents/Dropbox/College/CSCI\\ 315/jbc027"
-alias datamining="cd ~/Documents/Dropbox/College/CSCI\\ 379"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git vim)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
