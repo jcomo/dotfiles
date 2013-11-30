@@ -73,7 +73,7 @@ set wmnu
 set guioptions=egmt
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 set background=dark
-colorscheme base16-tomorrow
+colorscheme base16-default
 
 " ctrlp
 let g:ctrlp_working_path_mode = 0
