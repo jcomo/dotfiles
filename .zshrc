@@ -31,3 +31,5 @@ export LESS='-i-P%f (%i/%m) Line %lt/%L'
 export TERM=xterm-256color
 
 export RUBYOPT=rubygems
+
+source ~/.zshrc_custom
