@@ -7,6 +7,9 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="sorin"
 
+EDITOR=vim
+OOEDITOR=subl
+
 # Example aliases
 alias rm="rm -i"
 alias sr='screen -r'
