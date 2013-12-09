@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+subl --new-window --wait $*
