@@ -7,8 +7,8 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="sorin"
 
-EDITOR=vim
-OOEDITOR=subl
+export EDITOR=vim
+export OOEDITOR=subl
 
 # Example aliases
 alias rm="rm -i"
@@ -32,7 +32,5 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # create a better status readout for less
 export LESS='-i-P%f (%i/%m) Line %lt/%L'
 export TERM=xterm-256color
-
-export RUBYOPT=rubygems
 
 source ~/.zshrc_custom
