@@ -72,7 +72,7 @@ set noerrorbells
 set wmnu
 set guioptions=egmt
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
-set background=light
+set background=dark
 colorscheme base16-ocean
 
 " ctrlp
