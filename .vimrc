@@ -41,9 +41,9 @@ set autoread
 
 " Indentation
 set wrap
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 set autoindent
 "set foldmethod=indent
@@ -73,7 +73,7 @@ set wmnu
 set guioptions=egmt
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 set background=dark
-colorscheme base16-ocean
+colorscheme base16-mocha
 
 " ctrlp
 let g:ctrlp_working_path_mode = 0
