@@ -19,6 +19,7 @@ fi
 
 # Link new dotfiles and backup old
 ln -sb dotfiles/.screenrc .
+ln -sb dotfiles/.tmux.conf .
 
 # bash config files
 ln -sb dotfiles/.bash_profile .

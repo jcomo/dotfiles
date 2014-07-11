@@ -32,6 +32,9 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # create a better status readout for less
 export LESS='-R -i-P%f (%i/%m) Line %lt/%L'
-export TERM=xterm-256color
+
+if [ $TERM != "screen-256color" ]; then
+  export TERM=xterm-256color
+fi
 
 source ~/.zshrc_custom
