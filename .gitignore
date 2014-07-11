@@ -1,5 +1,2 @@
 .*_custom
 .gitconfig
-
-.vim/.netrwhist
-.vim/bundle/
