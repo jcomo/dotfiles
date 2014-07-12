@@ -19,3 +19,5 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+
+source $HOME/.profile
