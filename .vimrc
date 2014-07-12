@@ -18,6 +18,7 @@ set backspace=indent,eol,start
 set nosol
 set mat=3
 set wildignore+=*.o,*.obj,.git,*.pyc
+set ttimeoutlen=5    " no 'sticky escape'
 
 " Key mappings
 nnoremap <c-j> <c-w>j
@@ -78,7 +79,6 @@ colorscheme base16-tomorrow
 
 " Highlight the current line
 set cursorline
-" hi CursorLine  ctermbg=240
 
 " ctrlp config
 let g:ctrlp_map = '<leader>f'
@@ -93,3 +93,12 @@ map <leader>a :Ag!<space>
 
 " Search for word under cursor with silver searcher
 map <leader>A :Ag! "<C-r>=expand('<cword>')<CR>"
+
+" tabular
+map <leader>b   :Tab<space>/
+map <leader>b:  :Tab<space>/:<CR>
+map <leader>b=  :Tab<space>/=<CR>
+map <leader>b|  :Tab<space>/|<CR>
+
+" vim2hs haskell config
+let g:haskell_conceal_wide = 1

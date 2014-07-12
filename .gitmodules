@@ -22,3 +22,9 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = https://github.com/jcomo/oh-my-zsh
+[submodule ".vim/bundle/vim2hs"]
+	path = .vim/bundle/vim2hs
+	url = https://github.com/dag/vim2hs
+[submodule ".vim/bundle/tabular"]
+	path = .vim/bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
