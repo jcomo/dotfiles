@@ -17,6 +17,10 @@ if [ -d .vim/ ]; then
     mv .vim .vim~
 fi
 
+if [ -d .oh-my-zsh/ ]; then
+  mv .oh-my-zsh .oh-my-zsh~
+fi
+
 # Link new dotfiles and backup old
 ln -sb dotfiles/.screenrc .
 ln -sb dotfiles/.tmux.conf .
@@ -50,6 +54,8 @@ ln -sb dotfiles/.gitignore_global .
 git config --global core.excludesfile ~/.gitignore_global
 
 ln -sf dotfiles/.emacs.d .
+
+ln -sf dotfiles/.oh-my-zsh .
 
 read -p "Clean up? This will remove all original files (y/n) " response
 if [ "$response" == "y" ]; then
