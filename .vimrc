@@ -19,8 +19,6 @@ set nosol
 set mat=3
 set wildignore+=*.o,*.obj,.git,*.pyc
 
-set mouse=a
-
 " Key mappings
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
@@ -78,6 +76,10 @@ set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 set background=dark
 colorscheme base16-tomorrow
 
+" Highlight the current line
+set cursorline
+" hi CursorLine  ctermbg=240
+
 " ctrlp config
 let g:ctrlp_map = '<leader>f'
 let g:ctrlp_max_height = 30
@@ -91,10 +93,3 @@ map <leader>a :Ag!<space>
 
 " Search for word under cursor with silver searcher
 map <leader>A :Ag! "<C-r>=expand('<cword>')<CR>"
-
-" vimclojure
-let vimclojureRoot = "~/.vim/bundle/vimclojure"
-let vimclojure#HighlightBuiltins = 1
-let vimclojure#HighlightContrib = 1
-let vimclojure#DynamicHighlighting = 1
-let vimclojure#ParenRainbow = 1
