@@ -50,9 +50,6 @@ set expandtab
 set autoindent
 "set foldmethod=indent
 
-" Text formatting
-set textwidth=80
-
 " Search
 set ignorecase
 set smartcase
@@ -98,7 +95,6 @@ map <leader>A :Ag! "<C-r>=expand('<cword>')<CR>"
 map <leader>b   :Tab<space>/
 map <leader>b:  :Tab<space>/:<CR>
 map <leader>b=  :Tab<space>/=<CR>
-map <leader>b|  :Tab<space>/|<CR>
 
 " vim2hs haskell config
 let g:haskell_conceal_wide = 1
