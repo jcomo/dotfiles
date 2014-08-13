@@ -19,6 +19,9 @@
 [submodule ".vim/bundle/vim-scala"]
 	path = .vim/bundle/vim-scala
 	url = https://github.com/derekwyatt/vim-scala
+[submodule ".vim/bundle/php.vim"]
+	path = .vim/bundle/php.vim
+	url = https://github.com/StanAngeloff/php.vim
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = https://github.com/jcomo/oh-my-zsh
