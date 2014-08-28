@@ -25,6 +25,6 @@ source $HOME/.profile
 # lets use tmux if we can
 if which tmux 2>&1 >/dev/null; then
   if [ $TERM != "screen-256color" ] && [ $TERM != "screen" ]; then
-    tmux attach -t hack || tmux new -s hack; exit
+    tmux attach -t vagrant || tmux new -s vagrant; exit
   fi
 fi

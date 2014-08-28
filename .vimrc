@@ -98,3 +98,6 @@ map <leader>b=  :Tab<space>/=<CR>
 
 " vim2hs haskell config
 let g:haskell_conceal_wide = 1
+
+" python syntax
+let g:python_highlight_all = 1
