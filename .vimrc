@@ -1,6 +1,7 @@
 " More UI stuff
 let g:solarized_termcolors = 256
 let g:solzarized_termtrans = 0
+let g:airline_powerline_fonts = 1
 let base16colorspace=256    " Access colors present in 256 colorspace
 
 " Basics
@@ -71,8 +72,8 @@ set noerrorbells
 set wmnu
 set guioptions=egmt
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
-set background=dark
-colorscheme base16-tomorrow
+set background=light
+colorscheme base16-solarized
 
 " Highlight the current line
 set cursorline
@@ -101,3 +102,6 @@ let g:haskell_conceal_wide = 1
 
 " python syntax
 let g:python_highlight_all = 1
+
+" smarty template highlighting
+au BufRead,BufNewFile *.tpl set filetype=smarty
