@@ -1,2 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =0
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/vagrant/dev/tornado/tornado-server/tornadoserver/handlers'
+let g:netrw_dirhist_2='/home/vagrant/dev/tornado/service_modules/devicelist_service/tasks'
+let g:netrw_dirhist_3='/home/vagrant/dev/tornado/service_modules/devicelist_service/models'
+let g:netrw_dirhist_4='/home/vagrant/dev/server/scripts/campaign_approvals'
+let g:netrw_dirhist_5='/home/vagrant/dev/dashboard/app/locales/en'
+let g:netrw_dirhist_6='/home/vagrant/dev/tornado/service_modules/devicelist_service/models'
+let g:netrw_dirhist_7='/home/vagrant/dotfiles/.vim/bundle/vim-airline/autoload/airline'
+let g:netrw_dirhist_8='/home/vagrant/dev/event-service/api/v2/models'
+let g:netrw_dirhist_9='/home/vagrant/dev/event-service/venv/src/cb-modules/cbunittest'

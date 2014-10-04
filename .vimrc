@@ -1,7 +1,6 @@
 " More UI stuff
-let g:solarized_termcolors = 256
-let g:solzarized_termtrans = 0
 let g:airline_powerline_fonts = 1
+let g:airline_theme = 'airlineish'
 let base16colorspace=256    " Access colors present in 256 colorspace
 
 " Basics
@@ -70,9 +69,8 @@ set listchars=trail:·,precedes:·,tab:\ \
 set novisualbell
 set noerrorbells
 set wmnu
-set guioptions=egmt
-set guifont=Source\ Code\ Pro\ for\ Powerline:h12
-set background=light
+set noshowmode " dont show insert status while using airline
+set background=dark
 colorscheme base16-solarized
 
 " Highlight the current line

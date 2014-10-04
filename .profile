@@ -1,6 +1,7 @@
 export EDITOR=vim
 
 alias rm="rm -i"                            # confirm files to remove
+alias bro="sudo"
 
 # create a better status readout for less
 export LESS='-R -i-P%f (%i/%m) Line %lt/%L'
@@ -9,9 +10,9 @@ if [ $TERM != "screen-256color" ]; then
   export TERM=xterm-256color
 fi
 
-export PYTHONPATH="/home/vagrant/dev/tornado/service_modules"
+export PYTHONPATH="/home/vagrant/dev/tornado/modules"
 
-THEME="base16-solarized.light"
+THEME="base16-solarized.dark"
 COLORS_HOME=$HOME/.config/colors/base16-shell
 source "$COLORS_HOME/$THEME.sh"
 
