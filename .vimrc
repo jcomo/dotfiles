@@ -1,6 +1,7 @@
 " More UI stuff
 let g:solarized_termcolors = 256
 let g:solzarized_termtrans = 0
+let g:airline_powerline_fonts = 1
 let base16colorspace=256    " Access colors present in 256 colorspace
 
 " Basics
@@ -72,7 +73,11 @@ set wmnu
 set guioptions=egmt
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 set background=dark
-colorscheme base16-tomorrow
+colorscheme base16-monokai
+
+" Change cursor in edit mode
+let &t_SI .= "\<Esc>[5 q"
+let &t_EI .= "\<Esc>[2 q"
 
 " Highlight the current line
 set cursorline
