@@ -8,6 +8,12 @@ if [ ! -d dotfiles ]; then
   exit 1
 fi
 
+if [ "`uname -s`" == "Darwin"]; then
+    LN_FLAGS="-s"
+else
+    LN_FLAGS="-sb"
+fi
+
 
 if [ -d .emacs.d/ ]; then
     mv .emacs.d .emacs.d~
@@ -22,19 +28,22 @@ if [ -d .oh-my-zsh/ ]; then
 fi
 
 # Link new dotfiles and backup old
-ln -sb dotfiles/.screenrc .
-ln -sb dotfiles/.tmux.conf .
+ln $LN_FLAGS dotfiles/.screenrc .
+ln $LN_FLAGS dotfiles/.tmux.conf .
 
 # bash config files
-ln -sb dotfiles/.bash_profile .
-ln -sb dotfiles/.bashrc .
+ln $LN_FLAGS dotfiles/.bash_profile .
+ln $LN_FLAGS dotfiles/.bashrc .
 if [ ! -f .bashrc_custom ]; then
   touch dotfiles/.bashrc_custom
   ln -s dotfiles/.bashrc_custom .
 fi
 
 # zsh config files
-ln -sb dotfiles/.zshrc .
+ln $LN_FLAGS dotfiles/.zshrc .
+
+# profile config
+ln $LN_FLAGS dotfiles/.profile .
 
 # check for custom zsh config
 if [ ! -f .zshrc_custom ]; then
@@ -43,14 +52,14 @@ if [ ! -f .zshrc_custom ]; then
 fi
 
 # Vim config files
-ln -sb dotfiles/.vimrc .
+ln $LN_FLAGS dotfiles/.vimrc .
 ln -sf dotfiles/.vim .
 
 # conky
-ln -sb dotfiles/.conkyrc .
+ln $LN_FLAGS dotfiles/.conkyrc .
 
 # global gitignore
-ln -sb dotfiles/.gitignore_global .
+ln $LN_FLAGS dotfiles/.gitignore_global .
 git config --global core.excludesfile ~/.gitignore_global
 
 ln -sf dotfiles/.emacs.d .
