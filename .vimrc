@@ -65,6 +65,7 @@ set hlsearch
 set infercase
 
 " UI stuff
+set noshowmode
 set shortmess=as
 set wim=list:longest
 set display=lastline
