@@ -9,12 +9,8 @@ if [ $TERM != "screen-256color" ]; then
   export TERM=xterm-256color
 fi
 
-THEME="base16-monokai.dark"
-COLORS_HOME=$HOME/.config/colors/base16-shell
-source "$COLORS_HOME/$THEME.sh"
-
 # Add user installed sbin progs to path
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
