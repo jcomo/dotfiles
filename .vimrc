@@ -1,7 +1,7 @@
 " More UI stuff
-let g:solarized_termcolors = 256
+let g:solarized_termcolors = 16
 let g:solzarized_termtrans = 0
-let base16colorspace=256    " Access colors present in 256 colorspace
+let base16colorspace = 256    " Access colors present in 256 colorspace
 
 " Basics
 set nocp
@@ -30,6 +30,13 @@ nnoremap <CR> :noh<CR><CR>
 let mapleader=","
 nnoremap <leader><leader> <c-^>
 nnoremap <space> za
+
+" Yank text to the OS X clipboard
+noremap <leader>y "*y
+noremap <leader>yy "*Y
+
+" Preserve indentation while pasting text from OS X clipboard
+noremap <leader>p :set paste<CR>:put *<CR>:set nopaste<CR>
 
 " Custom commands
 cmap w!! %!sudo tee > /dev/null %
@@ -69,10 +76,8 @@ set listchars=trail:·,precedes:·,tab:\ \
 set novisualbell
 set noerrorbells
 set wmnu
-set guioptions=egmt
-set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 set background=dark
-colorscheme base16-tomorrow
+colorscheme solarized
 
 " Highlight the current line
 set cursorline
@@ -95,6 +100,3 @@ map <leader>A :Ag! "<C-r>=expand('<cword>')<CR>"
 map <leader>b   :Tab<space>/
 map <leader>b:  :Tab<space>/:<CR>
 map <leader>b=  :Tab<space>/=<CR>
-
-" vim2hs haskell config
-let g:haskell_conceal_wide = 1

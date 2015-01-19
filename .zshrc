@@ -23,8 +23,4 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.profile
 
 # lets use tmux if we can
-if which tmux 2>&1 >/dev/null; then
-  if [ $TERM != "screen-256color" ] && [ $TERM != "screen" ]; then
-    tmux attach -t hack || tmux new -s hack; exit
-  fi
-fi
+alias hack="tmux attach -t hack || tmux new -s hack;"
