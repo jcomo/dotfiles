@@ -1,0 +1,56 @@
+#!/bin/bash
+
+TMUX_GREEN=41
+TMUX_RED=1
+
+MAX_LEVEL=100
+WARNING_LEVEL=10
+
+DOTS=5
+
+
+battery_info () {
+    pmset -g batt | tail -n 1 | tr -d ';%' | tr -s '\t' ' ' | awk '{ print $2, $3 }'
+}
+
+dot_sequence () {
+    step=$(( $MAX_LEVEL / $DOTS ))
+    seq 0 $step $MAX_LEVEL | head -n $DOTS
+}
+
+battery_display () {
+    echo -n "#[fg=colour$1,nobold]"
+
+    for n in `dot_sequence`; do
+        if [[ $2 -ge $n ]]; then
+            echo -n '●'
+        else
+            echo -n '○'
+        fi
+    done
+
+    echo
+}
+
+
+battery_stats=($(battery_info))
+
+level=${battery_stats[0]}
+state=${battery_stats[1]}
+
+
+if [[ $level = "100" ]]; then
+    # Don't display anything if we're fully charged
+    exit 0
+fi
+
+
+if [[ $state = "charging" ]]; then
+    battery_display $TMUX_GREEN $level
+elif [[ $level -le "$WARNING_LEVEL" ]]; then
+    battery_display $TMUX_RED $level
+else
+    battery_display "" $level
+fi
+
+
