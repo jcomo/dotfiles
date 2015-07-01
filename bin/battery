@@ -39,7 +39,7 @@ level=${battery_stats[0]}
 state=${battery_stats[1]}
 
 
-if [[ $level = "100" ]]; then
+if [[ $state = "finishing" ]] || [[ $level = "100" ]]; then
     # Don't display anything if we're fully charged
     exit 0
 fi
