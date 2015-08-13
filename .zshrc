@@ -9,8 +9,8 @@ ZSH_THEME="jcomo"
 
 
 # Example aliases
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
+alias zshconfig="vim $HOME/.zshrc"
+alias ohmyzsh="vim $HOME/.oh-my-zsh"
 
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)

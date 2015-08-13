@@ -1,0 +1,91 @@
+#!/bin/sh
+
+DOTFILES="
+.gitignore_global
+.oh-my-zsh
+.profile
+.tmux.conf
+.vim
+.vimrc
+.zshrc
+"
+
+fatal () {
+    echo >&2 "\033[31m[FATAL]\033[0m $1"
+    exit 1
+}
+
+warn () {
+    echo "\033[33m[WARN] \033[0m $1"
+}
+
+success () {
+    echo "\033[32m[OK]   \033[0m $1"
+}
+
+info () {
+    echo "\033[36m[INFO] \033[0m $1"
+}
+
+silence () {
+    if [[ $DEBUG = 1 ]]; then
+        "$@"
+    else
+        "$@" &>/dev/null
+    fi
+}
+
+confirm () {
+    message="$1"
+    read -p "$1 Continue? [yN] " response
+
+    if [[ "y" != $response ]]; then
+        info "Exiting..."
+        exit 1
+    fi
+}
+
+link_dotfiles () {
+    for dotfile in $DOTFILES; do
+        silence ln -sf "$HOME/dotfiles/$dotfile" "$HOME" || warn "Failed to link $dotfile" && \
+            info "Linked $dotfile"
+    done
+}
+
+configure_git () {
+    read -p "Enter your name: " name
+    read -p "Enter your email: " email
+
+    git config --global user.name "$name"
+    git config --global user.email "$email"
+
+    git config --global push.default current
+
+    git config --global core.excludesfile "$HOME/.gitignore_global"
+
+    git config --global alias.co checkout
+    git config --global alias.ci commit
+    git config --global alias.st status
+    git config --global alias.br branch
+    git config --global alias.ds diff --cached
+    git config --global alias.spu stash
+    git config --global alias.spo stash pop
+    git config --global alias.hist "log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short"
+}
+
+
+if [[ "debug" = $1 ]]; then
+    DEBUG=1
+else
+    DEBUG=0
+fi
+
+confirm "Running this installation will wipe all previous dotfiles."
+
+info "Updating git submodules" && \
+    silence git submodule update --init || warn "Failed to update git modules" && \
+    link_dotfiles && \
+    info "Configuring git"
+    configure_git && \
+    success "Dotfiles installed!"
+

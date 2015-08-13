@@ -44,10 +44,3 @@ if which ipython 2>&1 > /dev/null; then
     alias ipy="ipython"
 fi
 
-# format json data
-alias format_json="python -m json.tool"
-
-# load any custom (or private) settings for mac
-if [[ -e ~/.profile_mac ]]; then
-    source ~/.profile_mac
-fi
