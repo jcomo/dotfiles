@@ -1,0 +1,18 @@
+[push]
+	default = current
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	ds = diff --cached
+	spu = stash
+	spo = stash
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	spo = stash
+	spo = stash
+[user]
+	name = Jonathan Como
+	email = jonathan.como@gmail.com
+[core]
+	excludesfile = /Users/jonathan/.gitignore_global
