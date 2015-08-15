@@ -83,26 +83,22 @@ configure_git () {
 
 
 main () {
-    if [[ "debug" = $1 ]]; then
-        DEBUG=1
-    else
-        DEBUG=0
-    fi
-
     confirm "Running this installation will wipe all previous dotfiles."
-
-    info "Updating git submodules"
-    silence git submodule update --init || warn "Failed to update git modules"
-    link_dotfiles
-    info "Installing zsh plugins"
-    install_zsh_plugins
-    info "Configuring git"
-    configure_git
+    info "Updating git submodules"; silence git submodule update --init || warn "Failed to update git modules"
+    info "Linking dotfiles"; link_dotfiles
+    info "Installing zsh plugins"; install_zsh_plugins
+    info "Configuring git"; configure_git
     success "Dotfiles installed!"
     success "Run 'source ~/.zshrc' to get going"
 }
 
 
 if [[ "${BASH_SOURCE[0]}" = "$0" ]]; then
+    if [[ "debug" = $1 ]]; then
+        DEBUG=1
+    else
+        DEBUG=0
+    fi
+
     main "$@"
 fi
