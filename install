@@ -14,6 +14,10 @@ DOTFILES="
 .zshrc
 "
 
+OH_MY_ZSH_PLUGINS="
+git://github.com/zsh-users/zsh-syntax-highlighting.git
+"
+
 success () {
     echo "\033[32m[OK]   \033[0m $1"
 }
@@ -51,12 +55,28 @@ link_dotfiles () {
     done
 }
 
-configure_git () {
-    read -p "Enter your name: " name
-    read -p "Enter your email: " email
+install_zsh_plugins () {
+    silence pushd $HOME/.oh-my-zsh/custom/plugins
+    for plugin in $OH_MY_ZSH_PLUGINS; do
+        silence git clone $plugin || \
+            warn "Failed to install plugin at $plugin - it may already be installed"
+    done
+    silence popd
+}
 
-    git config --global user.name "$name"
-    git config --global user.email "$email"
+prompt_for_git_config () {
+    option=$1
+    prompt="$2"
+
+    if [[ ! `git config --global $option` ]]; then
+        read -p "$prompt: " item
+        git config --global $option "$item"
+    fi
+}
+
+configure_git () {
+    prompt_for_git_config user.name "Enter your name"
+    prompt_for_git_config user.email "Enter your email"
 
     git config --global core.excludesfile "$HOME/.gitignore_global"
 }
@@ -74,9 +94,12 @@ main () {
     info "Updating git submodules"
     silence git submodule update --init || warn "Failed to update git modules"
     link_dotfiles
+    info "Installing zsh plugins"
+    install_zsh_plugins
     info "Configuring git"
     configure_git
     success "Dotfiles installed!"
+    success "Run 'source ~/.zshrc' to get going"
 }
 
 
