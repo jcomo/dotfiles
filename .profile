@@ -1,6 +1,7 @@
 export EDITOR=vim
 
-alias rm="rm -i"                            # confirm files to remove
+alias rm="rm -i"  # confirm files to remove
+alias be="bundle exec"
 
 # create a better status readout for less
 export LESS='-R -i-P%f (%i/%m) Line %lt/%L'

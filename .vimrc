@@ -1,8 +1,3 @@
-" More UI stuff
-let g:solarized_termcolors = 16
-let g:solzarized_termtrans = 0
-let base16colorspace = 256    " Access colors present in 256 colorspace
-
 " Basics
 set nocp
 call pathogen#infect()
@@ -78,7 +73,7 @@ set novisualbell
 set noerrorbells
 set wmnu
 set background=dark
-colorscheme solarized
+colorscheme vividchalk
 
 " Highlight the current line
 set cursorline
