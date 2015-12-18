@@ -1,0 +1,37 @@
+alias zshconfig="vim $HOME/.zshrc"
+alias ohmyzsh="vim $HOME/.oh-my-zsh"
+
+alias rm="rm -i"  # confirm files to remove
+alias be="bundle exec"
+
+silence () {
+    "$@" > /dev/null 2>&1
+}
+
+t () {
+    name=$1
+    current_session=$(tmux display-message -p '#S')
+
+    if [[ "$TMUX" != "" ]]; then
+        # In a tmux session
+        if [[ "$current_session" = "$name" ]]; then
+            echo "Already attached to '$name'"
+        else
+            silence tmux switch-client -t $name \
+                || echo "No session named '$name'. Run while detached to create this session"
+        fi
+    else
+        silence tmux attach -t $name || tmux new -s $name;
+    fi
+}
+
+td () {
+    silence tmux detach || echo "Not attached to a tmux session"
+}
+
+tk () {
+    name=$1
+    silence tmux kill-session -t $name && echo "Remove session $name"
+}
+
+alias tl="tmux list-sessions"
