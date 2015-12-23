@@ -20,7 +20,7 @@ export PATH="$PATH:$GOPATH/bin"
 # RVM
 if [[ -s $HOME/.rvm/scripts/rvm ]]; then
     source $HOME/.rvm/scripts/rvm
-    PATH="$HOME/.rvm/bin:$PATH"  # Add RVM to PATH for scripting
+    export PATH="$HOME/.rvm/bin:$PATH"  # Add RVM to PATH for scripting
 fi
 
 # virtualenvwrapper
