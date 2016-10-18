@@ -5,6 +5,7 @@ set -e
 
 DOTFILES="
 .gitconfig
+.githelpers
 .gitignore_global
 .oh-my-zsh
 .tmux.conf

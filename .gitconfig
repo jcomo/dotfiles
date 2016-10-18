@@ -1,18 +1,33 @@
 [push]
-	default = current
+  default = current
 [alias]
-	co = checkout
-	ci = commit
-	st = status
-	br = branch
-	ds = diff --cached
-	spu = stash
-	spo = stash
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	spo = stash
-	spo = stash
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  ds = diff --cached
+  spu = stash
+  spo = stash
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  spo = stash
+  spo = stash
+
+  # Fancy logging.
+  #   h = head
+  #   hp = head with patch
+  #   r = recent commits, only current branch
+  #   ra = recent commits, all reachable refs
+  #   l = all commits, only current branch
+  #   la = all commits, all reachable refs
+  head = !git r -1
+  h = !git head
+  hp = "!. ~/.githelpers && show_git_head"
+  r = !GIT_NO_PAGER=1 git l -10
+  ra = !git r --all
+  l = "!. ~/.githelpers && pretty_git_log"
+  la = !git l --all
 [user]
-	name = Jonathan Como
-	email = jonathan.como@gmail.com
+  name = Jonathan Como
+  email = jonathan.como@gmail.com
 [core]
-	excludesfile = /Users/jonathan/.gitignore_global
+  excludesfile = /Users/jonathan/.gitignore_global
