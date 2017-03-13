@@ -1,6 +1,17 @@
+" plugins
+call plug#begin('~/.vim/plugged')
+Plug 'Lokaltog/vim-powerline', { 'commit': '09c0cea8' }
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'godlygeek/tabular'
+Plug 'jlanzarotta/bufexplorer'
+Plug 'kien/ctrlp.vim'
+Plug 'rking/ag.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-fugitive'
+call plug#end()
+
 " Basics
 set nocp
-call pathogen#infect()
 syntax enable
 filetype plugin indent on
 set showmode
