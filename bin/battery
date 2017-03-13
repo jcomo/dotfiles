@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TMUX_GREEN=41
+TMUX_GREEN=2
 TMUX_RED=1
 
 MAX_LEVEL=100

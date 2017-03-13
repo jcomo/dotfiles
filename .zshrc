@@ -18,3 +18,4 @@ source $ZSH/oh-my-zsh.sh
 DOTFILES="$HOME/dotfiles"
 source $DOTFILES/profile
 source $DOTFILES/aliases
+source $DOTFILES/aliases.zsh

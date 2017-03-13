@@ -7,6 +7,10 @@ if [ $TERM != "screen-256color" ]; then
   export TERM="xterm-256color"
 fi
 
+if [[ -d $HOME/dotfiles/bin ]]; then
+    export PATH="$HOME/dotfiles/bin:$PATH"
+fi
+
 # Add user installed sbin progs to path
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 

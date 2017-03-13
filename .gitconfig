@@ -1,16 +1,15 @@
 [push]
   default = current
 [alias]
-  co = checkout
-  ci = commit
-  st = status
   br = branch
+  ci = commit
+  co = checkout
+  cpk = cherry-pick
   ds = diff --cached
-  spu = stash
-  spo = stash
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   spo = stash
-  spo = stash
+  spu = stash
+  st = status
 
   # Fancy logging.
   #   h = head
@@ -30,4 +29,8 @@
   name = Jonathan Como
   email = jonathan.como@gmail.com
 [core]
-  excludesfile = /Users/jonathan/.gitignore_global
+  excludesfile = ~/.gitignore_global
+[pager]
+  log = diff-highlight | less
+  show = diff-highlight | less
+  diff = diff-highlight | less
