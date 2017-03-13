@@ -18,6 +18,10 @@ OH_MY_ZSH_PLUGINS="
 git://github.com/zsh-users/zsh-syntax-highlighting.git
 "
 
+OH_MY_ZSH_THEMES="
+https://gist.githubusercontent.com/jcomo/82fde75040185592bbc8a520a7f78b7e/raw/c7689987118924e8b6025f12cf004c0a82fa0426/jcomo.zsh-theme
+"
+
 success () {
     echo "\033[32m[OK]   \033[0m $1"
 }
@@ -55,13 +59,29 @@ link_dotfiles () {
     done
 }
 
+install_oh_my_zsh () {
+    cd $HOME/dotfiles
+    git clone git@github.com:robbyrussell/oh-my-zsh .oh-my-zsh
+}
+
 install_zsh_plugins () {
-    silence pushd $HOME/.oh-my-zsh/custom/plugins
+    mkdir -p $HOME/.oh-my-zsh/custom/plugins
+    cd $HOME/.oh-my-zsh/custom/plugins
+
     for plugin in $OH_MY_ZSH_PLUGINS; do
         silence git clone $plugin || \
             warn "Failed to install plugin at $plugin - it may already be installed"
     done
-    silence popd
+}
+
+install_zsh_themes () {
+    mkdir -p $HOME/.oh-my-zsh/custom/themes
+    cd $HOME/.oh-my-zsh/custom/themes
+
+    for theme in $OH_MY_ZSH_THEMES; do
+        silence curl -sO $theme || \
+            warn "Failed to install theme $theme"
+    done
 }
 
 prompt_for_git_config () {
@@ -84,9 +104,10 @@ configure_git () {
 
 main () {
     confirm "Running this installation will wipe all previous dotfiles."
-    info "Updating git submodules"; silence git submodule update --init || warn "Failed to update git modules"
-    info "Linking dotfiles"; link_dotfiles
+    info "Installing oh-my-zsh"; install_oh_my_zsh
     info "Installing zsh plugins"; install_zsh_plugins
+    info "Installing zsh themes"; install_zsh_themes
+    info "Linking dotfiles"; link_dotfiles
     info "Configuring git"; configure_git
     success "Dotfiles installed!"
     success "Run 'source ~/.zshrc' to get going"
