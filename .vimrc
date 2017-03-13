@@ -7,7 +7,8 @@ set showmode
 set showcmd
 set spelllang=en_us
 set hidden
-set modelines=0
+set modeline
+set modelines=5
 set encoding=utf8
 set backspace=indent,eol,start
 set nosol
@@ -22,7 +23,7 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 nnoremap <c-s> :w<CR>
 nnoremap <CR> :noh<CR><CR>
-let mapleader=","
+let mapleader="\\"
 nnoremap <leader><leader> <c-^>
 nnoremap <space> za
 
@@ -72,19 +73,30 @@ set listchars=trail:·,precedes:·,tab:\ \
 set novisualbell
 set noerrorbells
 set wmnu
-set background=dark
-colorscheme vividchalk
 
-" Highlight the current line
-set cursorline
+" Color scheme
+let g:onedark_termcolors=16
+colorscheme onedark
+
+" Disable cursor line for performance reasons
+set nocursorline
+
+" golang
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+
+let g:molokai_original = 1
+let g:rehash256 = 1
 
 " ctrlp config
-let g:ctrlp_map = '<leader>f'
+let g:ctrlp_map = '<leader>ff'
 let g:ctrlp_max_height = 30
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_reversed = 0
-
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+" vim-go
+map <leader>gr :GoRun<CR>
+map <leader>gb :GoBuild<CR>
 
 " silver searcher
 map <leader>a :Ag!<space>
