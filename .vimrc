@@ -8,6 +8,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 " Basics
@@ -98,8 +99,13 @@ autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 let g:molokai_original = 1
 let g:rehash256 = 1
 
-" ctrlp config
-let g:ctrlp_map = '<leader>ff'
+" NERD tree
+map <C-n> :NERDTreeToggle<CR>
+" autoclose if NERD tree only buffer remaining
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" ctrl-p
+let g:ctrlp_map = '<C-p>'
 let g:ctrlp_max_height = 30
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_reversed = 0
