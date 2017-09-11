@@ -1,3 +1,5 @@
+# vim: set ft=sh:
+
 export EDITOR="vim"
 
 # create a better status readout for less
@@ -8,35 +10,36 @@ if [ $TERM != "screen-256color" ]; then
 fi
 
 if [[ -d $HOME/dotfiles/bin ]]; then
-    export PATH="$HOME/dotfiles/bin:$PATH"
+  export PATH="$HOME/dotfiles/bin:$PATH"
 fi
 
 # Add user installed sbin progs to path
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
-# Heroku toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
 # Go config
-export GOPATH="$HOME/developer/go"
-export PATH="$PATH:$GOPATH/bin"
+if installed go; then
+  export GOPATH="$HOME/developer/go"
+  export PATH="$GOPATH/bin:$PATH"
+fi
 
-# RVM
-if [[ -s $HOME/.rvm/scripts/rvm ]]; then
-    source $HOME/.rvm/scripts/rvm
-    export PATH="$HOME/.rvm/bin:$PATH"  # Add RVM to PATH for scripting
+# rbenv
+if installed rbenv; then
+  eval "$(rbenv init -)"
 fi
 
 # virtualenvwrapper
-if which virtualenvwrapper.sh 2>&1 > /dev/null; then
-    export VIRTUALENVWRAPPER_PYTHON="`which python`"
-    export VIRTUALENVWRAPPER_VIRTUALENV="`which virtualenv`"
-    export WORKON_HOME="$HOME/.virtualenvs"
-    source `which virtualenvwrapper.sh`
+if installed virtualenvwrapper.sh; then
+  export VIRTUALENVWRAPPER_PYTHON="`which python`"
+  export VIRTUALENVWRAPPER_VIRTUALENV="`which virtualenv`"
+  export WORKON_HOME="$HOME/.virtualenvs"
+  source `which virtualenvwrapper.sh`
 fi
 
 # ipython
-if which ipython 2>&1 > /dev/null; then
-    alias ipy="ipython"
+if installed ipython; then
+  alias ipy="ipython"
 fi
 
+if [[ -f $HOME/.secrets ]]; then
+  source $HOME/.secrets
+fi

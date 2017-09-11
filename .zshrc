@@ -1,3 +1,5 @@
+DOTFILES="$HOME/dotfiles"
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -15,8 +17,9 @@ plugins=(git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-DOTFILES="$HOME/dotfiles"
+eval $(/usr/libexec/path_helper -s)
+
+source $DOTFILES/funcs
 source $DOTFILES/profile
 source $DOTFILES/aliases
 source $DOTFILES/aliases.zsh
-eval $(/usr/libexec/path_helper -s)

@@ -1,0 +1,12 @@
+# vim: set ft=sh:
+
+if_installed () {
+  bin=$1
+  shift
+
+  installed $bin && "$@"
+}
+
+installed () {
+  command -v $1 >/dev/null 2>&1
+}
