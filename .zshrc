@@ -18,6 +18,7 @@ plugins=(git zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 eval $(/usr/libexec/path_helper -s)
+export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 
 source $DOTFILES/funcs
 source $DOTFILES/profile

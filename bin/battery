@@ -10,7 +10,7 @@ DOTS=5
 
 
 battery_info () {
-    pmset -g batt | tail -n 1 | tr -d ';%' | tr -s '\t' ' ' | awk '{ print $2, $3 }'
+    pmset -g batt | tail -n 1 | tr -d ';%' | tr -s '\t' ' ' | awk '{ print $3, $4 }'
 }
 
 dot_sequence () {
