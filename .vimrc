@@ -108,11 +108,13 @@ set nocursorline
 " ALE
 let g:ale_linters = {
       \   'python': ['flake8'],
+      \   'go': ['gopls'],
       \}
 
 let g:ale_fixers = {
       \    'python': ['black'],
       \    'sql': ['sqlformat'],
+      \    'terraform': ['terraform'],
       \}
 
 let g:ale_fix_on_save = 1
@@ -216,6 +218,9 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 " vim-go
 map <leader>gr :GoRun<CR>
 map <leader>gb :GoBuild<CR>
+
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
 " tabular
 map <leader>b   :Tab<space>/

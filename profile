@@ -27,6 +27,11 @@ if installed rbenv; then
   eval "$(rbenv init -)"
 fi
 
+# pyenv
+if installed pyenv; then
+  eval "$(pyenv init -)"
+fi
+
 # virtualenvwrapper
 if installed virtualenvwrapper.sh; then
   export VIRTUALENVWRAPPER_PYTHON="`which python`"
