@@ -19,7 +19,7 @@ git://github.com/zsh-users/zsh-syntax-highlighting.git
 "
 
 OH_MY_ZSH_THEMES="
-https://gist.githubusercontent.com/jcomo/82fde75040185592bbc8a520a7f78b7e/raw/c7689987118924e8b6025f12cf004c0a82fa0426/jcomo.zsh-theme
+https://gist.githubusercontent.com/jcomo/82fde75040185592bbc8a520a7f78b7e/raw/ede2d7d1c0a59c32102604caa1b2e7653e4d8cac/jcomo.zsh-theme
 "
 
 success () {
